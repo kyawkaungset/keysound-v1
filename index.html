@@ -6,13 +6,13 @@
     <title>Centered Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        /* Add the button press effect styles */
+        
         .key_btn {
             padding: 12px 20px;
             font-size: 16px;
             background-color: #fdfeff;
             color: rgb(0, 0, 0);
-            border-radius: 50%; /* This makes the button circular */
+            border-radius: 50%;
             cursor: pointer;
             transition: background-color 0.2s ease, transform 0.2s ease;
             margin-right: 7px;
@@ -26,16 +26,13 @@
         h1 {
             font-size: 20px;
         }
-        /* Hide all col-sm divs by default */
-        /* .col-4 {
-        display: none;
-        } */
 
 
     </style>
 </head>
 <body>
     <div class="container text-center">
+        <input type="text" id="hidden_input" style="display: none;" />
         <div id="song_container">
                 <div class="row">
                     <div class="col-4" id="song1">
@@ -109,7 +106,7 @@
     </div>
 
 </body>
-<!-- Add Bootstrap JS script here (before the closing </body> tag) -->
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -123,7 +120,8 @@
 
     // Event listener for key press
     document.addEventListener('keypress', function(event) {
-        const keyPressed = event.key.toLowerCase(); // Convert to lowercase to handle both uppercase and lowercase letters
+        // Convert to lowercase to handle both uppercase and lowercase letters
+        const keyPressed = event.key.toLowerCase(); 
         $('.key_btn').css('background-color', 'white');
 
         if (keyPressed === 'g') {
@@ -158,7 +156,12 @@
             $('#v_btn').css('background-color', 'red');
             playMP3('mp3files/D3.mp3');
         }
-        // Add more conditions for other keys or MP3 files as needed.
+        
+        function showKeyboard() {
+            document.getElementById('hidden_input').focus();
+        }
+
+        window.onload = showKeyboard;
     });
 </script>
 </html>
