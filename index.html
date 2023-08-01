@@ -24,14 +24,34 @@
         }
 
         h1 {
-            font-size: 20px;
+            font-size: 16px;
         }
 
+        @keyframes rainbow {
+            0% { color: red; }
+            15% { color: orange; }
+            30% { color: yellow; }
+            45% { color: green; }
+            60% { color: blue; }
+            75% { color: indigo; }
+            90% { color: violet; }
+            100% { color: red; }
+        }
 
+        /* Apply the animation to the <a> element */
+        a {
+            animation: rainbow 2s linear infinite;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <h1 style="color: red;">&#128514; This Application is not design for mobile phone &#128514;</h1>
+    <h1 style="color: red; font-size: 13px;">&#x1F639; This Application is just a prototype version not finish yet &#x1F639;</h1>
+    <h1 style="color: rgb(52, 200, 19); font-size: 15px;">so just play / don't complain &#x1F62C;</h1>
+    <h1 style="color: red; font-size: 13px;">just kidding if you have more ideas please sent to</h1>
+    <h1 style="color: red; font-size: 25px;">
+        <a href="mailto:kyawkaungset@gmail.com" style="color: inherit; text-decoration: none;">&#x1F63B; kyawkaungset@gmail.com &#x1F63B;</a>
+    </h1>
     <br>
     <div class="container text-center">
         <div id="song_container">
