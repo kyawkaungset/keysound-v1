@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add the button press effect styles */
+        .key_btn {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #fdfeff;
+            color: rgb(0, 0, 0);
+            border-radius: 50%; /* This makes the button circular */
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            margin-right: 7px;
+        }
+        .key_btn.clicked {
+            background-color: #2980b9;
+            transform: scale(0.95);
+            border-color: rgb(0, 0, 0);
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+        /* Hide all col-sm divs by default */
+        /* .col-4 {
+        display: none;
+        } */
+
+
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <div id="song_container">
+                <div class="row">
+                    <div class="col-4" id="song1">
+                        <h1>You Are My Sunshine</h1>
+                        <br>
+                        <h1>DGA BB BAB GG</h1>
+                        <h1>GAB CE ED CB</h1>
+                        <h1>GABC E EDCBG</h1>
+                        <h1>GAB CAA BG</h1>
+                    </div>
+                    <div class="col-4" id="song2">
+                        <h1>Little Do You Know</h1>
+                        <br>
+                        <h1>EDC HA CD DC CC G ED</h1>
+                        <h1>ED  CHA CD DC CC GED</h1>
+                        <h1>CH AH A GA GA GA HC ED</h1>
+                    </div>
+                    <div class="col-4" id="song3">
+                        <h1>Titanic</h1>
+                        <br>
+                        <h1>G G G G FG</h1>
+                        <h1>GFG AB A</h1>
+                        <h1>G GG GF G GD</h1>
+                        <h1>G GG G FG</h1>
+                        <h1>G FG ABA</h1>
+                        <h1>G G G G F GGD</h1>
+                        <h1>G A DRC BA</h1>
+                        <h1>BCB AGF G FE</h1>
+                        <h1>GA D RC BA</h1>
+                        <h1>BC BA GF</h1>
+                        <h1>G FF G ABA G</h1>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-4" id="song4">
+                        <h1>Fall in Love With You</h1>
+                        <br>
+                        <h1>C G C DEF ED</h1>
+                        <h1>GA BC DEFEDC</h1>
+                    </div>
+                    <div class="col-4" id="song5">
+                        <h1>Happy Birthday To You</h1>
+                        <h1>CC DC FE</h1>
+                        <h1>CC D C GF</h1>
+                        <h1>CC V A FED</h1>
+                        <h1>AA AF GF</h1>
+                    </div>
+                    <div class="col-4" id="song6">
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="row">
+                <button class="col-sm key_btn" id="a_btn">A</button>
+                <button class="col-sm key_btn" id="b_btn">B</button>
+                <button class="col-sm key_btn" id="c_btn">C</button>
+                <button class="col-sm key_btn" id="d_btn">D</button>
+                <button class="col-sm key_btn" id="e_btn">E</button>
+                <button class="col-sm key_btn" id="f_btn">F</button>
+                <button class="col-sm key_btn" id="g_btn">G</button>
+                <button class="col-sm key_btn" id="h_btn">H</button>
+                <button class="col-sm key_btn" id="i_btn">I</button>
+                <button class="col-sm key_btn" id="j_btn">J</button>
+                <button class="col-sm key_btn" id="k_btn">K</button>
+                <button class="col-sm key_btn" id="l_btn">L</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- Add Bootstrap JS script here (before the closing </body> tag) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+<script>
+    // Function to play MP3 file
+    function playMP3(mp3FilePath) {
+        const audio = new Audio(mp3FilePath);
+        audio.play();
+    }
+
+    // Event listener for key press
+    document.addEventListener('keypress', function(event) {
+        const keyPressed = event.key.toLowerCase(); // Convert to lowercase to handle both uppercase and lowercase letters
+        $('.key_btn').css('background-color', 'white');
+
+        if (keyPressed === 'g') {
+            $('#g_btn').css('background-color', 'red');
+            playMP3('mp3files/G4.mp3');
+        }
+        else if (keyPressed === 'a') {
+            $('#a_btn').css('background-color', 'red');
+            playMP3('mp3files/A4.mp3');
+        }else if (keyPressed === 'c') {
+            $('#c_btn').css('background-color', 'red');
+            playMP3('mp3files/C4.mp3');
+        }else if (keyPressed === 'b') {
+            $('#b_btn').css('background-color', 'red');
+            playMP3('mp3files/B4.mp3');
+        }else if (keyPressed === 'd') {
+            $('#d_btn').css('background-color', 'red');
+            playMP3('mp3files/D4.mp3');
+        }else if (keyPressed === 'e') {
+            $('#e_btn').css('background-color', 'red');
+            playMP3('mp3files/E4.mp3');
+        }else if (keyPressed === 'f') {
+            $('#f_btn').css('background-color', 'red');
+            playMP3('mp3files/F4.mp3');
+        }else if (keyPressed === 'v') {
+            $('#v_btn').css('background-color', 'red');
+            playMP3('mp3files/C5.mp3');
+        }else if (keyPressed === 'h') {
+            $('#v_btn').css('background-color', 'red');
+            playMP3('mp3files/B2.mp3');
+        }else if (keyPressed === 'r') {
+            $('#v_btn').css('background-color', 'red');
+            playMP3('mp3files/D3.mp3');
+        }
+        // Add more conditions for other keys or MP3 files as needed.
+    });
+</script>
+</html>
