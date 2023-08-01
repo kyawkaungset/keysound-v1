@@ -31,8 +31,8 @@
     </style>
 </head>
 <body>
+    <h1>This Application is not design for mobile phone :>></h1>
     <div class="container text-center">
-        <input type="text" id="keyboard_input" style="position: absolute; top: -100px; opacity: 0; pointer-events: none;">
         <div id="song_container">
                 <div class="row">
                     <div class="col-4" id="song1">
@@ -157,14 +157,7 @@
             playMP3('mp3files/D3.mp3');
         }
         
-        function showKeyboard() {
-            const keyboardInput = document.getElementById('keyboard_input');
-            keyboardInput.focus();
-            keyboardInput.click();
-        }
-
-        // Call the showKeyboard function when the page loads to show the keyboard
-        window.onload = showKeyboard;
+    
     });
 </script>
 </html>
