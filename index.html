@@ -32,7 +32,7 @@
 </head>
 <body>
     <div class="container text-center">
-        <input type="text" id="hidden_input" style="display: none;" />
+        <div id="keyboard_trigger" contenteditable="true" style="opacity: 0; pointer-events: none;"></div>
         <div id="song_container">
                 <div class="row">
                     <div class="col-4" id="song1">
@@ -158,9 +158,12 @@
         }
         
         function showKeyboard() {
-            document.getElementById('hidden_input').focus();
+            const keyboardTrigger = document.getElementById('keyboard_trigger');
+            keyboardTrigger.focus();
+            keyboardTrigger.click();
         }
 
+        // Call the showKeyboard function when the page loads to show the keyboard
         window.onload = showKeyboard;
     });
 </script>
